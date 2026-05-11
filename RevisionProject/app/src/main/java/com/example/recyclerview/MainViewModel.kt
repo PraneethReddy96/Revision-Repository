@@ -17,7 +17,7 @@ import javax.inject.Inject
  * This makes the UI predictable and prevents "illegal states" (e.g., showing loading and data simultaneously).
  */
 sealed interface ProductUiState {
-    object Loading : ProductUiState
+    data object Loading : ProductUiState
     data class Success(val products: List<Product>) : ProductUiState
     data class Error(val message: String) : ProductUiState
 }
@@ -59,7 +59,7 @@ class MainViewModel @Inject constructor(
      * Events flow up (UI -> VM) and State flows down (VM -> UI).
      */
     fun onProductClicked(product: Product) {
-        // Handle click logic (e.g., analytics, navigation)
+        // Handle click logic (e.g., analytics, logging)
         println("Clicked on: ${product.name}")
     }
 }

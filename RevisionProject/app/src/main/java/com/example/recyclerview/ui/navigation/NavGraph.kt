@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
  */
 sealed interface Screen {
     @Serializable
-    object ProductList : Screen
+    data object ProductList : Screen
 
     @Serializable
     data class ProductDetail(

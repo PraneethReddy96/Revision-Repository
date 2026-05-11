@@ -48,6 +48,7 @@ class MainActivity : ComponentActivity() {
                             ProductScreen(
                                 state = uiState,
                                 onProductClick = { product ->
+                                    viewModel.onProductClicked(product)
                                     navController.navigate(
                                         Screen.ProductDetail(
                                             id = product.id,
